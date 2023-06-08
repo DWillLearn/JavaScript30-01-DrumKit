@@ -5,5 +5,7 @@ window.addEventListener("keydown", (e) => {
   thisSound.currentTime = 0;
   thisSound.play();
   thisKey.classList.add("playing");
-  setTimeout(() => thisKey.classList.remove("playing"), 100);
+  thisKey.addEventListener("transitionend", () => {
+    thisKey.classList.remove("playing");
+  });
 });
